@@ -41,6 +41,13 @@ def upload_file():
             flash('Please upload a WAV file', 'danger')
     return redirect(url_for('register'))
 
+@app.route("/success")
+def success():
+    return render_template('success.html')
+
+@app.route("/fail")
+def fail():
+    return render_template('fail.html')
 
 
 # route to the login page
