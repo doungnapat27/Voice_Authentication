@@ -1,4 +1,6 @@
 # Voice_Authentication
+## prerequisite
+If you haven't instll flask, please do 'pip install flask' in your command line tool
 ## How to run
 1. open your command line tool
 2. cd to the directory that you clone this project
