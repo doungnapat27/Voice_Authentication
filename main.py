@@ -19,7 +19,7 @@ def upload_file():
     if request.method == 'POST':
         file = request.files['file']
         if file and file.filename.endswith('.wav'):
-            file.save('uploads/' + file.filename)
+            file.save(file.filename)
             flash('File uploaded successfully', 'success')
         else:
             flash('Please upload a WAV file', 'danger')
