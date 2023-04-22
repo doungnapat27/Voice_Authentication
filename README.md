@@ -1,5 +1,5 @@
 # Voice_Authentication
-#How to run
+## How to run
 1. open your command line tool
 2. cd to the directory that you clone this project
 3. type 'set FLASK_APP=main'
