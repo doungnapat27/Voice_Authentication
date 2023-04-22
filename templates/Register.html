@@ -9,17 +9,17 @@
     <title>Register</title>
   </head>
   <body>
-      <div class="username">Welcome <span>Username</span></div>
+      <div class="username">Welcome</div>
       <div class="box">
         <div class="container">
           <div class="top">
             <Header>Voice Authentication</Header>
           </div>
           <div class="glass-container">
-            <div class="input-field">    
-              <input type="text" class="form-control" placeholder="Username" id="email">
-            </div>
             <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_file')}}">
+              <div class="input-field">    
+                <input type="text" class="form-control" name="username" placeholder="Username" id="username">
+              </div>
               <input id="file" name="file" type="file" hidden onchange="displayFileName()" />
               <label for="file" id="file-label">Upload File Here</label>
               <button>Upload</button>

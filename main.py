@@ -1,7 +1,6 @@
-from flask import Flask
-from flask import request
+import json
+from flask import Flask, redirect, request, render_template, flash, url_for
 from markupsafe import escape
-from flask import render_template,flash
 import os
 
 
@@ -17,13 +16,30 @@ def register():
 @app.route("/uploadFile", methods=['POST'])
 def upload_file():
     if request.method == 'POST':
+
         file = request.files['file']
+        username = request.form['username']
+
         if file and file.filename.endswith('.wav'):
             file.save(file.filename)
             flash('File uploaded successfully', 'success')
+            # Save the data to a JSON file
+            data = {
+                "username": username,
+                "filename": file.filename
+            }
+            json_file = 'user-data.json'
+            if os.path.exists(json_file):
+                with open(json_file, 'r') as f:
+                    json_data = json.load(f)
+            else:
+                json_data = []
+            json_data.append(data)
+            with open('data/'+json_file, 'w') as f:
+                json.dump(json_data, f)
         else:
             flash('Please upload a WAV file', 'danger')
-    return render_template('register.html')
+    return redirect(url_for('register'))
 
 
 
