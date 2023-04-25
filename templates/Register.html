@@ -9,24 +9,22 @@
     <title>Register</title>
   </head>
   <body>
+      <div class="username">Welcome</div>
       <div class="box">
         <div class="container">
           <div class="top">
             <Header>Voice Authentication</Header>
           </div>
           <div class="glass-container">
-            <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_file')}}">
+            <form method="POST" enctype="multipart/form-data" action='/register'>
               <div class="input-field">    
-                <input type="text" class="form-control" name="username" placeholder="Username" id="username">
+                <input type="text" class="form-control" name="username" value=username placeholder="Username" id="username">
               </div>
-              <input id="file" name="file" type="file" hidden onchange="displayFileName()" />
-              <label for="file" id="file-label">Upload File Here</label>
-              <div class="button">
-                <button>Upload</button>
-              </div>
+              <label for="file" id="file-label">Press to Record File Here</label>
+              <button onclick="save_record()">Record</button>
             </form>
           </div>
-          {% with messages = get_flashed_messages(with_categories=true) %}
+          <!-- {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
                 <div class="alert alert-{{category}}" role="alert">
@@ -34,14 +32,21 @@
                 </div>
                 {% endfor %}
             {% endif %}
-          {% endwith %}
+          {% endwith %} -->
         </div>
       </div>
       <script>
-        function displayFileName() {
-          const input = document.getElementById('file');
-          const label = document.getElementById('file-label');
-          label.innerHTML = input.files[0].name;
+        function save_record() {
+          $.ajax({
+            type: "POST",
+            url: "/register",
+            success: function (data) {
+              console.log(data);
+            },
+            error: function () {
+              console.log("Error");
+            },
+          });
         }
       </script>
   </body>

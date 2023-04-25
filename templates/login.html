@@ -1,38 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="../static/styles/login.css"/>
+<head>
     <title>Microphone Button Example</title>
-  </head>
-  <body>
-
-    <div class="box">
-      <div class="container">
-        <div class="top">
-          <Header>Voice Authentication</Header>
+</head>
+<body>
+    <h1>Voice Authentication</h1>
+    <form method="POST" action="/login" enctype="multipart/form-data">
+        <div class="input-field">    
+            <input type="text" class="form-control" name="username" placeholder="Username" id="username">
         </div>
-        <div class="glass-container">
-          <form method="POST" action="/login" enctype="multipart/form-data">
-            <div class="input-field">
-              <input type="text" class="form-control" name="username" placeholder="Username" id="username"/>
-            </div>
-            <div class="button">
-              <button id="record-button" onclick="record()">Record</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
+        <button id="record-button" onclick="record()">Record</button>
+    </form>
     <script>
         function record() {
   $.ajax({
