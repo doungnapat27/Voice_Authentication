@@ -9,7 +9,6 @@
     <title>Register</title>
   </head>
   <body>
-      <div class="username">Welcome</div>
       <div class="box">
         <div class="container">
           <div class="top">
@@ -22,7 +21,9 @@
               </div>
               <input id="file" name="file" type="file" hidden onchange="displayFileName()" />
               <label for="file" id="file-label">Upload File Here</label>
-              <button>Upload</button>
+              <div class="button">
+                <button>Upload</button>
+              </div>
             </form>
           </div>
           {% with messages = get_flashed_messages(with_categories=true) %}
