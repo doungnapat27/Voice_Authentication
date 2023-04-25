@@ -1,0 +1,43 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore .env files
+.env*
+
+# Ignore log files
+*.log
+
+# Ignore compiled files
+*.pyc
+*.class
+*.o
+
+# Ignore cache and temp files
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore large files
+*.iso
+*.zip
+*.tar.gz
+*.tar.bz2
+*.dmg
+*.exe
+
+# Ignore image files if not needed
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Ignore data files if not needed
+*.csv
+*.xls
+*.xlsx
+*.json
+
+# Ignore any other files or directories as needed
+# Ignore weight model files
+weight/
+*.pt
