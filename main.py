@@ -116,7 +116,7 @@ def authenticate_user(username):
     similarity_score = 1 - cosine(user_features, reference_features)
     
     # determine if user is authenticated or not
-    if similarity_score >= 0.9:
+    if similarity_score >= 0.7:
         print("[x] --- User authenticated!...")
         return True
     else:
