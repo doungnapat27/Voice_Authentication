@@ -50,11 +50,11 @@ def authenticate_user():
         print("[x] --- Access denied!...")
 
 
-def main():
-    record_audio("voice-dech.m4a")
-    reference_features = extract_features("voice-dech.m4a")
-    np.save("reference_features.npy", reference_features)
-    authenticate_user()
+# def main():
+#     record_audio("voice-dech.m4a")
+#     reference_features = extract_features("voice-dech.m4a")
+#     np.save("reference_features.npy", reference_features)
+#     authenticate_user()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
