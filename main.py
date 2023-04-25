@@ -83,7 +83,7 @@ def record_audio(filename):
 def extract_features(filename):
     print('[#] --- extracting...')
     # load the audio file
-    fs, audio = wav.read(filename)
+    fs, audio = wav.read("data/audio/"+filename)
 
     # convert to mono if stereo
     if audio.ndim > 1:
