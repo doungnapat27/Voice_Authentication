@@ -64,22 +64,6 @@ body{
   margin-bottom: 16px;
 }
 
-.glass-container label{
-  height: 55px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  background: rgba(255, 254, 254, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px);
-  border-radius: 12px;
-  border: 1px solid rgba(218, 218, 218, 0.18);
-  margin-bottom: 16px;
-}
-
 .button{
   display: flex;
   justify-content: center;

@@ -77,7 +77,7 @@ def record_audio(filename):
     duration = 5  # duration of recording in seconds
     recording = sd.rec(int(fs * duration), samplerate=fs, channels=1)
     sd.wait()  # wait until recording is finished
-    wav.write(filename, fs, recording)
+    wav.write('data/audio/'+filename, fs, recording)
 
 
 def extract_features(filename):

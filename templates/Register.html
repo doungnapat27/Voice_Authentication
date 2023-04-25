@@ -9,31 +9,18 @@
     <title>Register</title>
   </head>
   <body>
-      <div class="username">Welcome</div>
       <div class="box">
         <div class="container">
           <div class="top">
-            <Header>Voice Authentication</Header>
+            <Header>Register Voice Authentication</Header>
           </div>
           <div class="glass-container">
             <form method="POST" enctype="multipart/form-data" action='/register'>
               <div class="input-field">    
                 <input type="text" class="form-control" name="username" placeholder="Username" id="username">
               </div>
-              <label for="file" id="file-label">Press to Record File Here</label>
               <button onclick="save_record()">Record</button>
             </form>
-          </div>
-          <!-- {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                <div class="alert alert-{{category}}" role="alert">
-                    {{ message }}
-                </div>
-                {% endfor %}
-            {% endif %}
-          {% endwith %} -->
-        </div>
       </div>
       <script>
         function save_record() {
