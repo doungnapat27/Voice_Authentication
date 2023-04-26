@@ -1,3 +1,8 @@
-flask
+# flask
 SpeechRecognition
 pyttsx3
+sounddevice
+scipy
+numpy
+flask
+python_speech_features==0.4
