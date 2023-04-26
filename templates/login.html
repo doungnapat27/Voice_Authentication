@@ -16,15 +16,26 @@
             <div class="input-field">
               <input type="text" class="form-control" name="username" placeholder="Username" id="username"/>
             </div>
-            <div class="button">
               <button id="record-button" onclick="record()">Record</button>
-            </div>
           </form>
         </div>
       </div>
     </div>
     <script>
       function record() {
+        var button = document.querySelector('button');
+          button.style.backgroundColor = "red";
+          // button.innerText = "Recording...";
+
+        var count = 5;
+        var timer = setInterval(function() {
+          count--;
+          button.innerText = "Recording...  [ " + count + " ]";
+          if(count === 0){
+            clearInterval(timer);
+          }
+        },1000);
+
         $.ajax({
           type: "POST",
           url: "/record",

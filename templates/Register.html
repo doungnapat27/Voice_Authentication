@@ -24,6 +24,19 @@
       </div>
       <script>
         function save_record() {
+          var button = document.querySelector('button');
+          button.style.backgroundColor = "red";
+          // button.innerText = "Recording...";
+
+          var count = 5;
+          var timer = setInterval(function() {
+            count--;
+            button.innerText = "Recording...  [ " + count + " ]";
+            if(count === 0){
+              clearInterval(timer);
+            }
+          },1000);
+
           $.ajax({
             type: "POST",
             url: "/register",
